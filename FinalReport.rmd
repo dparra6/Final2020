@@ -85,8 +85,13 @@ While they males being okay afterward for the drug is 96.28 and the placebo show
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+guysfish <- fisher.test(table1)
+guysfish
 ```
+
+In this chart we can see the number of people who actually got COVID starting with the people who got the drug around 196, and males who got the placebo at 141. Then you have your males who were okay after the drug being 5,072 and males who were okay after the placebo at 5,378. 
+
+Then we see the second chart for it being times 100, where males who got the drug and had COVID was 165, and the males who got COVID and had the placebo at 172. After we can see how many males were okay after the drug 5,103, and males being okay after the placebo 5,347. 
 
 Here we see the P-value being 0.0005801 because it is low and does not equal to 1. 
 
@@ -94,13 +99,14 @@ Where as the ratio is roughly 1.5 percent of males likely to get COVID with eith
 
 
 ```{r}
-effectiveness =  1.4  /( 1.4   +1)
+effect <- guysfish$p.value/(guysfish$p.value +1)
+effectiveness = guysfish$estimate/(guysfish$estimate +1)
 print(effectiveness*100)
 ```
 
 ```{r}
-low=(1.1/(1.1 + 1))*100
-hi=(1.8/(1.8 +1))*100
+low=(guysfish$conf.int[1]/(guysfish$conf.int[1] +1))
+hi=(guysfish$conf.int[2]/(guysfish$conf.int[2] +1))
 options(digits=2)
 ```
 
@@ -155,8 +161,14 @@ Then looking at the women who took the drug and was okay after is at 95.56 and t
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+galsfish <- fisher.test(table1)
+galsfish
 ```
+
+Just like before with the males this shows us how many females exactly got COVID or were okay afterwards. We can see from the top of the chart that the women who got COVID after the drug was 196, and the other females who got COVID using the placebo is 141. Then there are the part of females that were okay afterwards, with the drug was 5,072 and with the placebo was 5,378. 
+
+Then we have the chart below which is times by 100, where the females who got infected by COVID with the drug at 164.58, and the females who got COVID with the placebo at 172.42. Where the females who were okay afterward the drug is 5,103.42
+and with the placebo being 5,346.58
 
 The p-value here being 0.0005801 not being equal to 1. 
 
@@ -164,13 +176,14 @@ While being the odds ratio is 1.473872 with either the drug or placebo.
 
 
 ```{r}
-effectiveness =  1.473  /( 1.473   +1)
+effect <- galsfish$p.value/(galsfish$p.value +1)
+effectiveness = galsfish$estimate/(galsfish$estimate +1)
 print(effectiveness*100)
 ```
 
 ```{r}
-low=(1.17/(1.17 + 1))*100
-hi=(1.84/(1.84 +1))*100
+low=(galsfish$conf.int[1]/(galsfish$conf.int[1] +1))
+hi=(galsfish$conf.int[2]/(galsfish$conf.int[2] +1))
 options(digits=2)
 ```
 
@@ -232,21 +245,27 @@ Then we can see that the people who were okay with the drug afterwards the perce
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+gaysfish <- fisher.test(table1)
+gaysfish
 ```
+
+The top chart shows us the COVID cases made by the drug after is 196, and the placebo being 141. After we can also see how many people were okay after the drug being 5,072 and with the placebo being 5,378.
+
+Then we can see the chart that was expected by the Null with the COVID cases with the drug being 164.58, and with the placebo being 172.42. Then after it shows how everyone is doing afterward, with people who took the drug being 5,103.42 and the people who got the placebo being 5,346.58.
 
 This p-value for this LGBTQ data is 0.0005801. 
 
 Where the odds ratio being 1.473872.
 
 ```{r}
-effectiveness =  1.473  /( 1.473   +1)
+effect <- gaysfish$p.value/(gaysfish$p.value +1)
+effectiveness = gaysfish$estimate/(gaysfish$estimate +1)
 print(effectiveness*100)
 ```
 
 ```{r}
-low=(1.176/(1.176 + 1))*100
-hi=(1.849/(1.849 +1))*100
+low=(gaysfish$conf.int[1]/(gaysfish$conf.int[1] +1))
+hi=(gaysfish$conf.int[2]/(gaysfish$conf.int[2] +1))
 options(digits=2)
 ```
 
@@ -304,23 +323,25 @@ And then we can see that being okay afterwards while having the drug is 96.37, a
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+drugfish <- fisher.test(table1)
+drugfish
 ```
 
-The p-value for the DrugUser is 0.0005801 not being equal to 1 or greater. 
+The p-value for the DrugUser is 0.0005801 not being equal to 1 or greater which means we will regret the Null hypothesis that it will work. 
 
 While the odds ratio is 1.473872. 
 
 ## Effectiveness Confidence Interval
 
 ```{r}
-effectiveness =  1.473  /( 1.473   +1)
+effect <- drugfish$p.value/(drugfish$p.value +1)
+effectiveness = drugfish$estimate/(drugfish$estimate +1)
 print(effectiveness*100)
 ```
 
 ```{r}
-low=(1.176/(1.176 + 1))*100
-hi=(1.849/(1.849 +1))*100
+low=(drugfish$conf.int[1]/(drugfish$conf.int[1] +1))
+hi=(drugfish$conf.int[2]/(drugfish$conf.int[2] +1))
 options(digits=2)
 ```
 

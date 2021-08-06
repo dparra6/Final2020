@@ -50,6 +50,11 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 
+
+
+
+
+
 ## Numerical Summaries
 
 ```{r}
@@ -57,6 +62,11 @@ table1 <- xtabs(~infected + treatment, data=guy)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+
+
+
+
 
 
 ## Inferential results
@@ -68,7 +78,16 @@ fisher.test(table1)
 ```
 
 
+
+
+
+
+
+
 ## Effectiveness Confindence Interval
+
+
+
 
 
 
@@ -92,6 +111,10 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 
+
+
+
+
 ## Numerical Summaries
 
 ```{r}
@@ -103,13 +126,135 @@ colPerc(table2)
 
 
 
+
+
+
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
+
+
+
+
+
+## Effectiveness Confidence Interval
+
+
+
+
+
+
 # Sexual Orientation "LGBTQ"
+
+
+
+## Barplot 
+
+```{r}
+dd2 <- gay %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+
+
+
+
+
+## Numerical Summaries
+
+```{r}
+table2 <- xtabs(~infected + treatment, data=gay)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
+
+
+
+
+
+## Inferential Results 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
+
+
+
+## Effectiveness Confidence Interval
+
 
 
 
 
 # DrugUsers "Druguse = yes"
 
+## Barplot
+
+```{r}
+dd2 <- DrugUser %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+
+
+
+## Numerical Summaries 
+
+```{r}
+table2 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
+
+
+
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
 
@@ -117,6 +262,7 @@ colPerc(table2)
 
 
 
+## Effectiveness Confidence Interval
 
 
 

@@ -88,21 +88,23 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-
 Here we see the P-value being 0.0005801 because it is low and does not equal to 1. 
 
 Where as the ratio is roughly 1.5 percent of males likely to get COVID with either the drugs or placebo. 
 
 
+```{r}
+effectiveness =  1.4  /( 1.4   +1)
+print(effectiveness*100)
+```
 
+```{r}
+low=(1.1/(1.1 + 1))*100
+hi=(1.8/(1.8 +1))*100
+options(digits=2)
+```
 
-
-## Effectiveness Confindence Interval
-
-
-
-
-
+## Effectiveness Confidence Interval `r low`  to `r hi`
 
 
 # Gals "sex = females"
@@ -161,7 +163,18 @@ The p-value here being 0.0005801 not being equal to 1.
 While being the odds ratio is 1.473872 with either the drug or placebo. 
 
 
-## Effectiveness Confidence Interval
+```{r}
+effectiveness =  1.473  /( 1.473   +1)
+print(effectiveness*100)
+```
+
+```{r}
+low=(1.17/(1.17 + 1))*100
+hi=(1.84/(1.84 +1))*100
+options(digits=2)
+```
+
+## Effectiveness Confidence Interval `r low`  to `r hi`
 
 
 

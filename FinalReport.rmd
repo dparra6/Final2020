@@ -239,7 +239,18 @@ This p-value for this LGBTQ data is 0.0005801.
 
 Where the odds ratio being 1.473872.
 
-## Effectiveness Confidence Interval
+```{r}
+effectiveness =  1.473  /( 1.473   +1)
+print(effectiveness*100)
+```
+
+```{r}
+low=(1.176/(1.176 + 1))*100
+hi=(1.849/(1.849 +1))*100
+options(digits=2)
+```
+
+## Effectiveness Confidence Interval `r low`  to `r hi`
 
 
 
@@ -302,7 +313,18 @@ While the odds ratio is 1.473872.
 
 ## Effectiveness Confidence Interval
 
+```{r}
+effectiveness =  1.473  /( 1.473   +1)
+print(effectiveness*100)
+```
 
+```{r}
+low=(1.176/(1.176 + 1))*100
+hi=(1.849/(1.849 +1))*100
+options(digits=2)
+```
+
+## Effectiveness Confidence Interval `r low`  to `r hi`
 
 
 

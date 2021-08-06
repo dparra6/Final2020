@@ -100,13 +100,13 @@ Where as the ratio is roughly 1.5 percent of males likely to get COVID with eith
 
 ```{r}
 effect <- guysfish$p.value/(guysfish$p.value +1)
-effectiveness = guysfish$estimate/(guysfish$estimate +1)
-print(effectiveness*100)
+effectivenessguy = guysfish$estimate/(guysfish$estimate +1)*100
+print(effectivenessguy*100)
 ```
 
 ```{r}
-low=(guysfish$conf.int[1]/(guysfish$conf.int[1] +1))
-hi=(guysfish$conf.int[2]/(guysfish$conf.int[2] +1))
+low=(guysfish$conf.int[1]/(guysfish$conf.int[1] +1))*100
+hi=(guysfish$conf.int[2]/(guysfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
@@ -177,13 +177,13 @@ While being the odds ratio is 1.473872 with either the drug or placebo.
 
 ```{r}
 effect <- galsfish$p.value/(galsfish$p.value +1)
-effectiveness = galsfish$estimate/(galsfish$estimate +1)
-print(effectiveness*100)
+effectivenessgals = galsfish$estimate/(galsfish$estimate +1)*100
+print(effectivenessgals*100)
 ```
 
 ```{r}
-low=(galsfish$conf.int[1]/(galsfish$conf.int[1] +1))
-hi=(galsfish$conf.int[2]/(galsfish$conf.int[2] +1))
+low=(galsfish$conf.int[1]/(galsfish$conf.int[1] +1))*100
+hi=(galsfish$conf.int[2]/(galsfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
@@ -259,13 +259,13 @@ Where the odds ratio being 1.473872.
 
 ```{r}
 effect <- gaysfish$p.value/(gaysfish$p.value +1)
-effectiveness = gaysfish$estimate/(gaysfish$estimate +1)
-print(effectiveness*100)
+effectivenessgays = gaysfish$estimate/(gaysfish$estimate +1)*100
+print(effectivenessgays*100)
 ```
 
 ```{r}
-low=(gaysfish$conf.int[1]/(gaysfish$conf.int[1] +1))
-hi=(gaysfish$conf.int[2]/(gaysfish$conf.int[2] +1))
+low=(gaysfish$conf.int[1]/(gaysfish$conf.int[1] +1))*100
+hi=(gaysfish$conf.int[2]/(gaysfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
@@ -331,25 +331,32 @@ The p-value for the DrugUser is 0.0005801 not being equal to 1 or greater which 
 
 While the odds ratio is 1.473872. 
 
-## Effectiveness Confidence Interval
 
 ```{r}
 effect <- drugfish$p.value/(drugfish$p.value +1)
-effectiveness = drugfish$estimate/(drugfish$estimate +1)
-print(effectiveness*100)
+effectivenessdrug = drugfish$estimate/(drugfish$estimate +1)*100
+print(effectivenessdrug*100)
 ```
 
 ```{r}
-low=(drugfish$conf.int[1]/(drugfish$conf.int[1] +1))
-hi=(drugfish$conf.int[2]/(drugfish$conf.int[2] +1))
+low=(drugfish$conf.int[1]/(drugfish$conf.int[1] +1))*100
+hi=(drugfish$conf.int[2]/(drugfish$conf.int[2] +1))*100
 options(digits=2)
 ```
 
 ## Effectiveness Confidence Interval `r low`  to `r hi`
 
 
+# Conclusion and recommendation
 
+Comparing to these 4 types of people it is easy to tell which drug is more affected even though I cannot get the percentages right in the end. 
 
+You can tell by the way the bars are defining the 4 sections of the 4 different kind of people, we can tell that in the LGBTQ had the second most hard time with the placebo and the drug, they had the most COVID cases. They were the ones who had the hardest time for this vaccine. 
 
+Then we have the men who are having the worst time for the vaccine they also had a lot of cases after the vaccine with the drug and placebo. Although they did have a couple of people who were okay after the drug or placebo. 
 
+The women did not suffer much through the vaccine their stats show how they were evened out during the whole thing the women didn't have much of COVID cases with the drug but had a lot with the placebo, and they evened out when it came afterwards if they were still okay. 
 
+Finally the vaccine worked more on the drugusers with most of them getting COVID after the placebo but not as much cases with the drug, and more people were feeling fine afterwards. 
+
+After doing the charts for this the ones who took the biggest hit were the men, even after they had taken the drug or placebo they were still the most contagious. 

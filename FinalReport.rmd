@@ -49,7 +49,13 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+Here in the first Bar plot, we can see that we do the count on one. And see that the drug has worked at 5000, and the placebo is a little higher than the drug. 
 
+Although the on the left side the drug has more covid cases, than the placebo. 
+
+Our second graph is being times by 100 and on the left side we can see that males who got the drug got COVID and the placebo they weren't as many cases.
+
+When on the right side males who took the drug were okay, and the males who took the placebo had a higher bar than the people who took the drug over 50.
 
 
 
@@ -64,7 +70,12 @@ colPerc(table1)
 ```
 
 
+Out of 100, we can see that the top chart has more COVID cases for the drug than the placebo leading to 58.16, while the the COVID cases for the placebo is 41.84. 
+Meanwhile the placebo males were more okay than the drug males being around 51.46 and the drug males being okay around 48.54. 
 
+The second chart we see is times by 100, and we can see the COVID cases getting smaller and the okay afterward is getting bigger. For the drug males their COVID cases is at 3.72, and the placebo males are at 2.55. 
+
+While they males being okay afterward for the drug is 96.28 and the placebo showing 97.45. 
 
 
 
@@ -78,7 +89,9 @@ fisher.test(table1)
 ```
 
 
+Here we see the P-value being 0.0005801 because it is low and does not equal to 1. 
 
+Where as the ratio is roughly 1.5 percent of males likely to get COVID with either the drugs or placebo. 
 
 
 
@@ -110,10 +123,13 @@ basicCC <- ggplot(dd3,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+Here we see the count for the women taking the placebo and the drug. We can see that on the left side the women who took the drugs were did not have get COVID, as much as the women who took the placebo. 
 
+Where on the right side of the chart we can see that the women who took the drug were more okay than the ones who took the placebo. 
 
+Then we times the number by 100 and we can see the difference from the males. Where as the females who took the drug did not have so many COVID cases as the males before, and the women who took the placebo had more COVID cases. 
 
-
+On the right side of the graph we can see that the women who took the drug were just slightly more okay than the women who took the placebo. 
 
 ## Numerical Summaries
 
@@ -123,11 +139,13 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
+Here we can see a more detailed version of the bar plots, where on the top we can see that the women who had the drug and got COVID is at 33.11. The women who took the placebo and got COVID is at 66.89. 
 
+The women who took the drug (50.31) and was okay afterwards was way higher than the ones who took the placebo (49.69). 
 
+If we looked at the bottom chart we can also see that the women who took the drug and got COVID is 4.44 and the women who got the placebo and ended up with COVID is at 8.67. 
 
-
-
+Then looking at the women who took the drug and was okay after is at 95.56 and the women who took the placebo is at 91.33 way lower than compared to the males. 
 
 
 ## Inferential Results
@@ -138,11 +156,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-value here being 0.0005801 not being equal to 1. 
 
-
-
-
-
+While being the odds ratio is 1.473872 with either the drug or placebo. 
 
 
 ## Effectiveness Confidence Interval
@@ -173,11 +189,13 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+This bar plot is for the LGBTQ, and you can see on the first plot on the left we can see that the people who took the drug got COVID afterwards, while the ones who took the placebo their COVID cases was way lower than the drug cases. 
 
+While the people who took the drug and was okay afterwards is a little lower than the ones who took the placebo and were also okay. 
 
+The second bar plot showing a big difference between this one and the other we have looked at, where on the left side there is more COVID cases for those who took the drug. And less COVID cases for those who took the placebo. 
 
-
-
+Where on the right side of the bar plot shows somewhat of an equal bar, where the ones who took the placebo were more okay than the people who took the drug. 
 
 ## Numerical Summaries
 
@@ -187,10 +205,13 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
+Here we can see the detailed version of the bar plots, were on the top you can see that the people who took the drug had a large amount of COVID cases being around 70.69. While the people who took the placebo had less COVID cases being 29.31. 
 
+Where as the people who took the drug and was okay is around 49.17, and the people who took the placebo and was okay is higher at 50.83. 
 
+When we times it to 100 we can see that the people who took the drug had 7.97 of COVID cases, and the people who took the placebo their COVID cases are at 3.36 being less than the ones who took the drugs. 
 
-
+Then we can see that the people who were okay with the drug afterwards the percentage being 92.03, and people who took the placebo and were okay at 96.64. 
 
 
 ## Inferential Results 
@@ -201,10 +222,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+This p-value for this LGBTQ data is 0.0005801. 
 
-
-
-
+Where the odds ratio being 1.473872.
 
 ## Effectiveness Confidence Interval
 
@@ -231,9 +251,13 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+For this bar plot we are using the people who use drugs, the top of the chart we see that the COVID cases were less for the people who took the drug, and the people who took the placebo is a bit higher. 
 
+Where as the people who were okay after the drug is a bit lower than the people who took the placebo has a higher percentage. 
 
+Then times it by a 100, we can see on the left that the people who took the drug had less COVID cases, than the people who took the placebo which is way higher. 
 
+Then we can see on the right side the people who were okay after the drug is less than the people who were okay for those who took the placebo. 
 
 ## Numerical Summaries 
 
@@ -243,10 +267,13 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
+Now we can see the details on the bar plots, where we can see the top for the people who got COVID after the drug being 33.33 and having the placebo COVID cases being 66.67. 
 
+While the top chart also shows the people who were okay afterwards, we can see the numbers are somewhat low, the people who took the drug and was okay is 47.83 and the people who took the placebo is at 52.17. 
 
+Then we see the bottom chart where we can see that the COVID cases went down, way more the people who took the drug is at 3.63 and the people who took the placebo is at 6.46. 
 
-
+And then we can see that being okay afterwards while having the drug is 96.37, and having taken the placebo is at 93.54 two of them being somewhat similar to each other but the placebo having more COVID cases. 
 
 ## Inferential Results
 
@@ -256,11 +283,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-value for the DrugUser is 0.0005801 not being equal to 1 or greater. 
 
-
-
-
-
+While the odds ratio is 1.473872. 
 
 ## Effectiveness Confidence Interval
 
